@@ -66,19 +66,19 @@ jobs:
     needs: [ build ]
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          mkdir dist
-          cd dist
-          
+
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: dist-upload
+          path: dist
 
       ## deploy RNAPP
       - name: Updating environment...
         run: |
           pwd
+          ls -lart
+          cd dist
           ls -lart
           cd ~
           pwd
