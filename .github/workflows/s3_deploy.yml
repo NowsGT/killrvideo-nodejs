@@ -78,7 +78,7 @@ jobs:
         run: |
           pwd
           ls -lart
-          cd dist
+          cd ./dist
           ls -lart
           cd ~
           pwd
