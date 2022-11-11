@@ -33,7 +33,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 'lts/fermium'
+          node-version: 'v6.12.3'
       - run: npm install
 
   build:
