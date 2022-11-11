@@ -53,6 +53,12 @@ jobs:
           ls -lart
           cd ./dist
           pwd
+          
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-upload
+          path: dist/
             
             
   post-build:
