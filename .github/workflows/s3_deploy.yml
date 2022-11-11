@@ -65,8 +65,6 @@ jobs:
       ## deploy RNAPP
       - name: Updating environment...
         run: |
-          ls -lart
-          cd ./dist
           pwd
           ls -lart
           cd ~
