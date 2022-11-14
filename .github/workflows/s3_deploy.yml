@@ -53,12 +53,16 @@ jobs:
           ls -lart
           cd ./dist
           pwd
+          mkdir -p ~/bundle-output
+          echo "Test file" > ~/bundle-output/test.txt
           
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
           name: dist-upload
-          path: dist
+          path: |
+           dist
+           ~/bundle-output
             
   post-build:
     runs-on: ubuntu-latest
@@ -71,7 +75,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-upload
-          path: dist
+          path: |
+           dist
+           ~/bundle-output
 
       ## deploy RNAPP
       - name: Updating environment...
@@ -82,4 +88,6 @@ jobs:
           ls -lart
           cd ~
           pwd
+          ls -lart
+          cd ~/bundle-output
           ls -lart
