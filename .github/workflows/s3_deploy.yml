@@ -67,12 +67,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-upload
-          path: dist
-
       ## deploy RNAPP
       - name: Updating environment...
         run: |
