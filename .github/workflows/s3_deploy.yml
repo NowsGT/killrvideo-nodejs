@@ -92,6 +92,7 @@ jobs:
       ## deploy RNAPP
       - name: Updating environment...
         run: |
+          cat package.json | grep "version"
           pwd
           ls -lart
           cd ./dist
